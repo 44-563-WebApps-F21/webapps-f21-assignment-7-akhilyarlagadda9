@@ -94,8 +94,8 @@
 
     <script>
         let ids = ["image0", "image1", "image2", "image3", "image4", "image5", "image6", "image7", "image8", "image9", "image10", "image11", "image12", "image13", "image14", "image15", "image16", "image17", "image18", "image19", "image20", "image21", "image22", "image23"]
-        let triesCount = 0, 
-        animalLocation = getRandomInt(0, 24) // 24 is exclusive
+        let triesCount = 0,
+            animalLocation = getRandomInt(0, 24) // 24 is exclusive
         function check(position) {
             id = ids[position]
             imgElement = document.getElementById(id)
@@ -122,24 +122,24 @@
             disTag.innerHTML = "Distance is " + maxDis
         }
         function resetGame() {
-                animalLocation = getRandomInt(0, 24) // 24 is exclusive
-                triesCount = 0
-                triesTag = document.getElementById("tries")
-                triesTag.innerHTML = "Number of tries is " + triesCount
-                disTag = document.getElementById("distance")
-                disTag.innerHTML = "Distance is 0" 
+            animalLocation = getRandomInt(0, 24) // 24 is exclusive
+            triesCount = 0
+            triesTag = document.getElementById("tries")
+            triesTag.innerHTML = "Number of tries is " + triesCount
+            disTag = document.getElementById("distance")
+            disTag.innerHTML = "Distance is 0"
 
-                for(let i = 0; i <= 23; i++) {
-                    imgElement = document.getElementById(ids[i])
-                    imgElement.src = "forest-image.jpg"
-                }
+            for (let i = 0; i <= 23; i++) {
+                imgElement = document.getElementById(ids[i])
+                imgElement.src = "forest-image.jpg"
             }
+        }
 
         function getRandomInt(min, max) {
-                min = Math.ceil(min);
-                max = Math.floor(max);
-                return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-            }
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+        }
     </script>
 
 </body>

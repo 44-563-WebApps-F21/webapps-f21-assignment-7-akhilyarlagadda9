@@ -50,10 +50,27 @@
 	<button id="push" onclick="makeNewDiv()" class="btn btn-primary">Push value</button>
 	<button id="pop" onclick="popItem()" class="btn btn-danger">Pop</button>
 	<button id="zap" onclick="zap()" class="btn btn-warning">Zap values</button>
-	<button id="unique" onclick="removeDups()" class="btn btn-success">Unique</button>
+	
+	
+	 <button id="unique" onclick="removeDups()" class="btn btn-success">Unique</button>
 
 </body>
 <script>
+	function removeDups() {
+		stackItems = document.getElementsByClassName('stack');
+		for (let i = 0; i < stackItems.length; i++) {
+			element = stackItems[i].innerHTML;
+			for (let j = i + 1; j < stackItems.length; j++) {
+				element1 = stackItems[j].innerHTML;
+				if (element == element1) {
+					console.log(stackItems[j])
+					stackItems[j].remove();
+					j--;
+					i--;
+				}
+			}
+		}
+	}
 	function makeNewDiv() {
 		/* make the div and its text */
 		let element = document.createElement("div")
@@ -83,21 +100,7 @@
 			}
 		}
 	}
-	function removeDups() {
-		stackItems = document.getElementsByClassName('stack');
-		for (let i = 0; i < stackItems.length; i++) {
-			element = stackItems[i].innerHTML;
-			for (let j = i + 1; j < stackItems.length; j++) {
-				element1 = stackItems[j].innerHTML;
-				if (element == element1) {
-					console.log(stackItems[j])
-					stackItems[j].remove();
-					j--;
-					i--;
-				}
-			}
-		}
-	}
+	
 </script>
 
 </html>
