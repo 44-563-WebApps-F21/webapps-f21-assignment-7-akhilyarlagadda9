@@ -31,10 +31,11 @@
       console.log(myTime);
     }
     function startTime() {
-      for (let i = 0; i <= 3; i++) {
+      counter = getRandomInt(0, 11) // 11 is exclusive
+      for (let i = 0; i < counter; i++) {
         setTimeout(function () {
           document.getElementById('countdown').innerHTML = i
-        }, ((3 - i) * 1000))
+        }, ((counter - i) * 1000))
       }
       setTimeout(function () {
         if (myTime === undefined) {
@@ -45,8 +46,13 @@
           document.getElementById('target').innerHTML = "Time was " + diff
         }
         myTime = undefined
-      }, 3000)
+      },counter * 3000)
     }
+    function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+            }
   </script>
 
 </body>
